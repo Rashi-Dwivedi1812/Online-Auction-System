@@ -1,0 +1,196 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #d83c65, #972378);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 1s ease;
+}
+
+/* Header */
+header {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8saheqAM8XH52medZPE5-nQd5AKA2pKlVlEtaZIrVTaIMTHjFaKiqccK9wp8i6vS27_k&usqp=CAU"); /* Background Image */
+    text-align: center;
+    padding: 40px 0;
+    color: rgb(239, 235, 235);
+    box-shadow: 0 10px 20px rgba(23, 23, 23, 0.1);
+    margin-bottom: 10px; /* Margin for gap between header and content */
+}
+
+.welcome {
+    text-align: center;
+}
+
+.welcome h1 {
+    font-size: 3em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 1.5em;
+    color: white;
+}
+header h1 {
+    font-size: 4em;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    color: whitesmoke;
+}
+
+/* Welcome Section */
+.welcome {
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+
+.welcome h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.welcome p {
+    font-size: 1.5em;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Section Titles */
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #444;
+    border-bottom: 2px solid #6a11cb;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Auction, Transaction, Inventory Lists */
+.auction-list, .transaction-list, .inventory-list, .bid-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Item Cards */
+.auction-item, .transaction-item, .inventory-item, .bid-item {
+    background-color: #f9f9f9;
+    flex: 1 1 calc(45% - 20px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.auction-item:hover, .transaction-item:hover, .inventory-item:hover, .bid-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Titles */
+.auction-item h3, .transaction-item h3, .inventory-item h3 , .bid-item h3{
+    font-size: 1.5em;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+/* Card Details */
+.auction-item p, .transaction-item p, .inventory-item p, .bid-item p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #666;
+}
+
+/* Button Styles */
+button {
+    background-color: #6a11cb;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #307afa;
+    transform: scale(1.05);
+}
+
+.analytics-summary p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #444;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#welcome-section{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    font-size: 1.5em;
+}
+
+.account-settings {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.account-settings button {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.account-settings button:hover {
+    background: linear-gradient(135deg, #45a049, #6FBF73);
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Transaction - Online Auction System</title>
+    <link rel="stylesheet" href="view_transact.css">
+    <script src="view_transact.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Transaction Details</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="transaction-details">
+        <div class="transaction-summary">
+            <h2 id="transactionTitle">TRANSACTION TITLE</h2>
+            <p id="itemSold">Item: </p>
+            <p id="buyerName">Buyer: </p>
+            <p id="finalPrice">Final Price: $</p>
+            <p id="status">Status: </p>
+        </div>
+
+        <div class="payment-summary">
+            <h2>PAYMENT INFORMATION</h2>
+            <p id="paymentMethod">Payment Method: </p>
+            <p id="paymentDate">Payment Date: </p>
+        </div>
+
+        <div class="delivery-summary">
+            <h2>DELIVERY TRANSACTION</h2>
+            <p id="deliveryAddress">Delivery Address: </p>
+            <p id="deliveryStatus">Delivery Status: </p>
+        </div>
+
+        <button class="back-button" onclick="window.history.back()">Back to Dashboard</button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Online Auction System. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

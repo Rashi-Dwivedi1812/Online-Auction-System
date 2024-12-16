@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Seller Dashboard - Online Auction System</title>
+    <link rel="stylesheet" href="seller.css">
+    <script src="seller.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>.</h1>
+    </header>
+
+    <div class="welcome">
+        <h1>WELCOME TO SELLER'S DASHBOARD</h1>
+        <p>Welcome <span id="username"></span></p> <!-- Where the username will appear -->
+    </div>
+
+    <!-- Main Content Section -->
+    <div id="main-container" class="container">
+        <!-- My Auctions Section -->
+        <section class="dashboard-section my-auctions">
+            <h2 class="section-title">My Auctions</h2>
+            <div class="auction-list">
+                <div class="auction-item">
+                    <h3>Fine Art Painting</h3>
+                    <p>Current Bid: $350</p>
+                    <p>Status: Active</p>
+                    <p id="timer-1">Time Left: 00:00:00</p>
+                    <button onclick="viewAuction(1)">View Auction</button>
+                    <img src="https://imgs.search.brave.com/PJLksnicscatpnCP0wBYT3bLLvTFMGuRYcWhifAb0Sc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNDU4/OTIyMzgxL3Bob3Rv/L2FuZ2VsLW9uLWEt/Y2h1cmNoLWZyZXNj/by5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9czVKanVfdS1z/TFJPcVV6YVNBVy1p/am1wektBdmpKTzlL/VXBhb1B4dzNKZz0" alt="Fine art">
+                </div>
+                <div class="auction-item upcoming">
+                    <h3>Classic Guitar</h3>
+                    <p>Starting Bid: $250</p>
+                    <p>Status: Upcoming</p>
+                    <button onclick="editAuction(2)">Edit Auction</button>
+                    <img src="https://imgs.search.brave.com/sOyIasUFueqmNxxWJGI1jgoEwoxzoU2SLP7wdOEUItg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTA5/NTM1MzA2L3Bob3Rv/L2d1aXRhci1yb29t/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1IckFJR2RYaU9q/TURoS0dVT0t5YXZY/UFlXM1hET2RvaVZR/a3ZJNTU5bGpNPQ" alt="Guitar">
+                </div>
+                <div class="auction-item completed">
+                    <h3>Luxury Watch</h3>
+                    <p>Final Price: $500</p>
+                    <p>Status: Completed</p>
+                    <button onclick="viewTransactionDetails(2)">View Transaction</button>
+                    <img src="https://imgs.search.brave.com/qjnxlzXvl_b6X16fQ-XXofIMme2o7CnVbI4oeVLjDbE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTUz/MTgxOTc1L3Bob3Rv/L2dvbGQtd2F0Y2gt/d2l0aC1zZWEtc2hl/bGxzLXBpbmstYW5k/LXNhbmQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPWpocXph/QTVlNHBrdmRHaExJ/MVVINHZSRnJ4TV9Y/QTljUGVDRTMzM0Fw/Rm89" alt="Gold watch">
+                </div>
+            </div>
+        </section>
+
+        <!-- Bid Tracking Section -->
+        <section class="dashboard-section bid-tracking">
+            <h2 class="section-title">Current Bids</h2>
+            <div class="bid-list">
+                <div class="bid-item">
+                    <h3>Vintage Watch</h3>
+                    <p>Highest Bid: $100</p>
+                    <button onclick="viewBids(1)">View Bids</button>
+                </div>
+                <div class="bid-item">
+                    <h3>Fine Art Painting</h3>
+                    <p>Highest Bid: $350</p>
+                    <button onclick="viewBids(2)">View Bids</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transactions Section -->
+        <section id="transactions" class="dashboard-section transactions">
+            <h2 class="section-title">My Transactions</h2>
+            <div class="transaction-list">
+                <div class="transaction-item">
+                    <h3>Vintage Watch Sale</h3>
+                    <p>Buyer: JohnDoe</p>
+                    <p>Final Price: $100</p>
+                    <p>Status: Paid</p>
+                    <button onclick="viewTransactionDetails(1)">View Details</button>
+                </div>
+                <div class="transaction-item">
+                    <h3>Luxury Watch Sale</h3>
+                    <p>Buyer: JaneSmith</p>
+                    <p>Final Price: $500</p>
+                    <p>Status: Paid</p>
+                    <button onclick="viewTransactionDetails(2)">View Details</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seller Analytics -->
+        <section id="analytics" class="dashboard-section analytics">
+            <h2 class="section-title">Seller Performance</h2>
+            <div class="analytics-summary">
+                <p>Total Sales: $1000</p>
+                <p>Successful Auctions: 5</p>
+                <p>Pending Transactions: 2</p>
+                <p>Average Sale Price: $200</p>
+            </div>
+        </section>
+
+        <!-- Account Settings -->
+        <section class="account-settings">
+            <h2>Account Settings</h2>
+            <button onclick="logout()">Logout</button>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer-section">
+        <p class="footer-text">© 2024 Online Auction System. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

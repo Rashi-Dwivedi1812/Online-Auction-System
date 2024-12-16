@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Online Auction System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // This function will handle the registration logic and save the data in localStorage
+        async function handleRegistration(event) {
+            event.preventDefault();  // Prevent the form from submitting
+
+            // Get the form data
+            var username = document.querySelector("input[name='username']").value;
+            var email = document.querySelector("input[name='email']").value;
+            var password = document.querySelector("input[name='password']").value;
+            var confirmPassword = document.querySelector("input[name='confirm-password']").value;
+            var role = document.querySelector("select[name='role']").value;
+
+            // Email validation (basic check for Gmail format)
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid Gmail address.");
+                return;
+            }
+
+            // Check if the email exists by calling a backend API (simulated here)
+            const emailExists = await checkEmailExists(email);
+            if (emailExists) {
+                alert("This email is already registered. Please choose a different one.");
+                return;
+            }
+
+            // Check if the passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            // Save the user details to localStorage (simulated here)
+            var user = { username: username, email: email, password: password, role: role };
+            localStorage.setItem(email, JSON.stringify(user)); // Save user object using email as key
+
+            // Redirect to the login page after registration
+            window.location.href = "index.html";
+        }
+
+        // Simulated email existence check (in a real scenario, you need a server-side API for this)
+        async function checkEmailExists(email) {
+            // Simulating a backend call with a dummy response for the purpose of this example
+            // In real use, you would send the email to a backend server to check if it exists
+            const existingEmails = ["testuser1@gmail.com", "testuser2@gmail.com"]; // Example of existing emails
+
+            // Simulate an async request to check if email is already registered
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(existingEmails.includes(email));  // Check if email exists in the mock list
+                }, 1000);
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>.</h1>
+    </header>
+    <div class="container">
+        <div class="new-container">
+            <h2>Register</h2>
+            <form onsubmit="handleRegistration(event)">  <!-- Adding onsubmit handler -->
+                <label for="username">Username:</label>
+                <input type="text" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" required>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" name="confirm-password" required>
+
+                <label for="role">Role:</label>
+                <select name="role" required>
+                    <option value="buyer">Buyer</option>
+                    <option value="seller">Seller</option>
+                </select>
+                
+                <button type="submit">Register</button>
+            </form>
+
+            <p>Already have an account? <a href="index.html">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>

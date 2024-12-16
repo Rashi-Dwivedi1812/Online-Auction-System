@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Dashboard - Online Auction System</title>
+    <link rel="stylesheet" href="buyers.css">
+    <script src="buyers.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>.</h1>
+        </header>
+
+        <div class="welcome">
+            <h1>Welcome to Your Buyer's Dashboard</h1>
+            <p>Welcome <span id="username"></span>!</p> <!-- Where the username will appear -->
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <!-- Ongoing Auctions Section -->
+            <section class="auctions">
+                <h2>Ongoing Auctions</h2>
+                <div class="auction-list">
+                    <!-- Auction Items -->
+                    <div class="auction-item" id="auction-item-1">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpJiMF5jQd-rCJsNQAis_9V_sMsHXXXT2OqA&s" alt="Item 1">
+                        <h3>Vintage Watch</h3>
+                        <p>Current Bid: $100</p>
+                        <p id="timer-1">Time Left : 00:00:00</p>
+                        <button class="bid-button" onclick="location.href='place_bid.html?itemId=1'">Place Bid</button>
+                    </div>
+                    <div class="auction-item" id="auction-item-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfCGnd2iXuCbuz5wP8dFUjCM5EABmLUG_R_A&s" alt="Item 2">
+                        <h3>Fine Art</h3>
+                        <p>Current Bid: $350</p>
+                        <p id="timer-2">Time Left : 00:00:00</p>
+                        <button class="bid-button" onclick="location.href='place_bid.html?itemId=2'">Place Bid</button>
+                    </div>
+                    <div class="auction-item" id="auction-item-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRArgImLjtv-95tBLav6Mcq37oilTNrizvjpA&s" alt="Item 2">
+                        <h3>Classic Guitar</h3>
+                        <p>Current Bid: $250</p>
+                        <p id="timer-3">Time Left : 00:00:00</p>
+                        <button class="bid-button" onclick="location.href='place_bid.html?itemId=2'">Place Bid</button>
+                    </div>
+                    <div class="auction-item" id="auction-item-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJEajcmNagx1nc4bdIiwD2aSi631o9HWb9GWoUdxem3cp1MV9LD14_4yjp-KAN6o9nF6Q&usqp=CAU" alt="Item 2">
+                        <h3>Precious Jewellery</h3>
+                        <p>Current Bid: $500</p>
+                        <p id="timer-4">Time Left : 00:00:00</p>
+                        <button class="bid-button" onclick="location.href='place_bid.html?itemId=2'">Place Bid</button>
+                    </div>
+                    <!-- More auction items can be added here -->
+                </div>
+            </section>
+
+            <!-- Active Bids Section -->
+            <section class="active-bids" id="activeBidsSection">
+                <h2>My Recent Bids</h2>
+                <div class="bid-list" id="recentBidsList">
+                    <!-- This will be updated with new bids dynamically -->
+                    <div class="bid-item">
+                        <h3>Toys & Comic Books</h3>
+                        <p>Your Bid: $480</p>
+                        <p>Status: Non-Active</p>
+                    </div>
+                    <div class="bid-item">
+                        <h3>Artwork</h3>
+                        <p>Your Bid: $260</p>
+                        <p>Status: Non-Active</p>
+                    </div>
+                    <!-- New bids will be inserted here -->
+                </div>
+            </section>
+
+            <!-- Other Sections -->
+            <section class="watchlist">
+                <h2>Your Watchlist</h2>
+                <div class="watchlist-items" id="watchlistItems">
+                    <div class="watchlist-item" id="watchlist-item-1">
+                        <h3>US dollar Coins</h3>
+                        <p>Current Bid: $300</p>
+                        <button class="watchlist-button" onclick="removeFromWatchlist(1)">Remove</button>
+                    </div>
+                    <div class="watchlist-item" id="watchlist-item-2">
+                        <h3>Antique Vase</h3>
+                        <p>Current Bid: $500</p>
+                        <button class="watchlist-button" onclick="removeFromWatchlist(2)">Remove</button>
+                    </div>
+                    <!-- More watchlist items can be added here -->
+                </div>
+            </section>
+
+            <section class="account-settings">
+                <h2>Account Settings</h2>
+                <button onclick="logout()">Logout</button>
+            </section>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>© 2024 Online Auction System. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // On page load, retrieve the username from localStorage and display it
+        document.addEventListener("DOMContentLoaded", function() {
+            var username = localStorage.getItem('username');
+            if (username) {
+                document.getElementById('username').textContent = username;
+            }
+        });
+    </script>
+</body>
+</html>

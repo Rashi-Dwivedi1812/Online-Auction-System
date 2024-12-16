@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Dashboard - Online Auction System</title>
+    <link rel="stylesheet" href="buyers.css">
+    <script src="buyers.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>.</h1>
+    </header>
+
+    <div class="welcome">
+        <h1>Welcome to Your Buyer's Dashboard</h1>
+        <p>Welcome <span id="username"></span></p> <!-- Where the username will appear -->
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <section class="auctions">
+                <h2>Ongoing Auctions</h2>
+                <div class="auction-list">
+                    <!-- Auction Items -->
+                    <div class="auction-item" id="auction-item-1">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpJiMF5jQd-rCJsNQAis_9V_sMsHXXXT2OqA&s" alt="Item 1">
+                        <h3>Vintage Watch</h3>
+                        <p>Current Bid: $100</p>
+                        <p id="timer-1">Time Left : 00:00:00</p>
+                        <button class="bid-button" onclick="location.href='place_bid.html?itemId=1'">Place Bid</button>
+                    </div>
+                    <div class="auction-item" id="auction-item-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfCGnd2iXuCbuz5wP8dFUjCM5EABmLUG_R_A&s" alt="Item 2">
+                        <h3>Fine Art</h3>
+                        <p>Current Bid: $350</p>
+                        <p id="timer-2">Time Left : 00:00:00</p>
+                        <button class="bid-button" onclick="location.href='place_bid.html?itemId=2'">Place Bid</button>
+                    </div>
+                    <div class="auction-item" id="auction-item-3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRArgImLjtv-95tBLav6Mcq37oilTNrizvjpA&s" alt="Item 3">
+                        <h3>Classic Guitar</h3>
+                        <p>Current Bid: $250</p>
+                        <p id="timer-3">Time Left : 00:00:00</p>
+                        <button class="bid-button" onclick="location.href='place_bid.html?itemId=3'">Place Bid</button>
+                    </div>
+                    <div class="auction-item" id="auction-item-4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJEajcmNagx1nc4bdIiwD2aSi631o9HWb9GWoUdxem3cp1MV9LD14_4yjp-KAN6o9nF6Q&usqp=CAU" alt="Item 4">
+                        <h3>Precious Jewellery</h3>
+                        <p>Current Bid: $500</p>
+                        <p id="timer-4">Time Left : 00:00:00</p>
+                        <button class="bid-button" onclick="location.href='place_bid.html?itemId=4'">Place Bid</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="active-bids" id="activeBidsSection">
+                <h2>My Recent Bids</h2>
+                <div class="bid-list" id="recentBidsList">
+                    <div>
+                    <h3>Toys & Comic Books</h3>
+                    <p>Your Bid: $480</p>
+                    <p>Status: Non-Active</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="watchlist">
+                <h2>Your Watchlist</h2>
+                <div class="watchlist-items" id="watchlistItems">
+                    <div class="watchlist-item" id="watchlist-item-1">
+                        <h3>US dollar Coins</h3>
+                        <p>Current Bid: $300</p>
+                        <button class="watchlist-button" onclick="removeFromWatchlist(1)">Remove</button>
+                    </div>
+                    <div class="watchlist-item" id="watchlist-item-2">
+                        <h3>Antique Vase</h3>
+                        <p>Current Bid: $500</p>
+                        <button class="watchlist-button" onclick="removeFromWatchlist(2)">Remove</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="account-settings">
+                <h2>Account Settings</h2>
+                <button onclick="logout()">Logout</button>
+            </section>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>© 2024 Online Auction System. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // On page load, retrieve the username from localStorage and display it
+    // On page load, retrieve the username from localStorage and display it
+    document.addEventListener("DOMContentLoaded", function() {
+        var username = localStorage.getItem('username');
+        if (username) {
+            document.getElementById('username').textContent = username;
+        }
+
+        // Load recent bids from localStorage
+        var recentBids = JSON.parse(localStorage.getItem('recentBids')) || [];
+        var recentBidsList = document.getElementById('recentBidsList');
+
+        // Clear any existing bid items
+        recentBidsList.innerHTML = '';
+
+        // Debugging: Log recent bids to see if they're loaded correctly
+        console.log("Loaded recent bids: ", recentBids);
+
+        // Dynamically create bid items
+        recentBids.forEach(function(bid) {
+            var bidItem = document.createElement('div');
+            bidItem.classList.add('bid-item');
+            bidItem.innerHTML = `
+                <h3>${bid.itemName}</h3>
+                <p>Your Bid: $${bid.amount}</p>
+                <p>Status: ${bid.status}</p>
+            `;
+            recentBidsList.appendChild(bidItem);
+        });
+
+        // If there are no bids, show a message
+        if (recentBids.length === 0) {
+            recentBidsList.innerHTML = "<p>No recent bids placed.</p>";
+        }
+    });
+    function viewAuctionDetails(itemName) {
+            alert('Viewing details for: ' + itemName);
+        }
+
+        // Function to load ongoing auctions from sessionStorage
+function loadOngoingAuctions() {
+    // Retrieve the auction data from sessionStorage
+    const auctionData = JSON.parse(sessionStorage.getItem('auctionData'));
+
+    // Check if the auction data exists in sessionStorage
+    if (auctionData) {
+        console.log('Auction Data:', auctionData);  // Log the data to see it in the console
+
+        // Get the auction list container
+        const auctionList = document.getElementById('auction-list');
+
+        // Create a new div element to represent the auction item
+        const auctionItem = document.createElement('div');
+        auctionItem.classList.add('auction-item');
+        auctionItem.innerHTML = `
+            <h3>${auctionData.title}</h3>
+            <p>Starting Bid: $${auctionData.startingBid}</p>
+            <p>Status: ${auctionData.status}</p>
+            <button onclick="viewAuction(${auctionData.id})">View Auction</button>
+        `;
+
+        // Append the new auction item to the auction list
+        auctionList.appendChild(auctionItem);
+
+        // Optionally, remove the auction data from sessionStorage after adding it to the page
+        // sessionStorage.removeItem('auctionData');
+    } else {
+        console.log('No auction data found in sessionStorage');
+    }
+}
+
+// Call the function to load ongoing auctions when the page loads
+window.onload = loadOngoingAuctions;
+
+// Function to handle viewing auction (redirect to auction details page or similar)
+function viewAuction(auctionId) {
+    // This can be expanded to show detailed information about the auction
+    alert('View Auction: ' + auctionId);
+}
+// Function to load ongoing auctions from sessionStorage
+function loadOngoingAuctions() {
+    // Retrieve the auction data from sessionStorage
+    const auctionData = JSON.parse(sessionStorage.getItem('auctionData'));
+
+    // Check if the auction data exists in sessionStorage
+    if (auctionData) {
+        console.log('Auction Data:', auctionData);  // Log the data to see it in the console
+
+        // Get the auction list container
+        const auctionList = document.getElementById('auction-list');
+
+        // Create a new div element to represent the auction item
+        const auctionItem = document.createElement('div');
+        auctionItem.classList.add('auction-item');
+        auctionItem.innerHTML = `
+            <h3>${auctionData.title}</h3>
+            <p>Starting Bid: $${auctionData.startingBid}</p>
+            <p>Status: ${auctionData.status}</p>
+            <button onclick="viewAuction(${auctionData.id})">View Auction</button>
+        `;
+
+        // Append the new auction item to the auction list
+        auctionList.appendChild(auctionItem);
+
+        // Optionally, remove the auction data from sessionStorage after adding it to the page
+        // sessionStorage.removeItem('auctionData');
+    } else {
+        console.log('No auction data found in sessionStorage');
+    }
+}
+
+// Call the function to load ongoing auctions when the page loads
+window.onload = loadOngoingAuctions;
+
+// Function to handle viewing auction (redirect to auction details page or similar)
+function viewAuction(auctionId) {
+    // This can be expanded to show detailed information about the auction
+    alert('View Auction: ' + auctionId);
+}
+
+    </script>
+</body>
+</html>

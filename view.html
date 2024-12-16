@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Bids</title>
+    <link rel="stylesheet" href="view.css">
+</head>
+<body>
+    <header>
+        <h1>View Bids for Auction</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Bids for Auction ID: <span id="auction-id"></span></h2>
+            <ul id="bids-list">
+                <!-- Bids will be dynamically loaded here -->
+            </ul>
+        </div>
+    </main>
+    <script>
+        // Fetch Auction ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const auctionID = urlParams.get('auctionID');
+        document.getElementById('auction-id').textContent = auctionID;
+
+        // Example dynamic data loading (replace with backend call)
+        const exampleBids = [
+            { bidder: "Rashi Dwivedi", amount: "$1000" }
+        ];
+
+        const bidsList = document.getElementById('bids-list');
+        exampleBids.forEach(bid => {
+            const li = document.createElement('li');
+            li.textContent = `${bid.bidder}: ${bid.amount}`;
+            bidsList.appendChild(li);
+        });
+    </script>
+    <script src="view.js" defer></script>
+</body>
+</html>

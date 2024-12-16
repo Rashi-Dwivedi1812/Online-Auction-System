@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Details</title>
+    <link rel="stylesheet" href="view.css">
+   
+
+</head>
+<body>
+    <header>
+        <h1>Transaction Details</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Transaction ID: <span id="transaction-id"></span></h2>
+            <p>Buyer: <span id="buyer"></span></p>
+            <p>Final Price: <span id="final-price"></span></p>
+            <p>Status: <span id="status"></span></p>
+        </div>
+    </main>
+    <script>
+        // Fetch Transaction ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const transactionID = urlParams.get('transactionID');
+        document.getElementById('transaction-id').textContent = transactionID;
+
+        // Example dynamic data (replace with backend call)
+        const transactionDetails = {
+            buyer: "John Doe",
+            finalPrice: "$500",
+            status: "Paid"
+        };
+
+        document.getElementById('buyer').textContent = transactionDetails.buyer;
+        document.getElementById('final-price').textContent = transactionDetails.finalPrice;
+        document.getElementById('status').textContent = transactionDetails.status;
+    </script>
+    <script src="view.js" defer></script>
+</body>
+</html>

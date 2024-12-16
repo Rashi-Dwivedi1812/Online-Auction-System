@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Online Auction</title>
+    <link rel="stylesheet" href="seller.css">
+    <script src="seller.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <h1>Welcome, <span id="seller-name"><?php echo $seller_name; ?></span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#manage-listings">Manage Listings</a></li>
+                    <li><a href="#bidding-sales">Bidding & Sales</a></li>
+                    <li><a href="#payments-shipping">Payments & Shipping</a></li>
+                    <li><a href="#messages">Messages</a></li>
+                    <li><a href="index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard Overview Section -->
+    <section class="overview">
+        <h2>Dashboard Overview</h2>
+        <div class="overview-stats">
+            <div class="stat">
+                <h3>Total Sales</h3>
+                <p><?php echo $total_sales; ?></p>
+            </div>
+            <div class="stat">
+                <h3>Active Auctions</h3>
+                <p><?php echo $active_auctions; ?></p>
+            </div>
+            <div class="stat">
+                <h3>Pending Actions</h3>
+                <p><?php echo $pending_actions; ?> items to ship</p>
+            </div>
+        </div>
+        <div class="recent-activity">
+            <h3>Recent Activity</h3>
+            <p> <?php echo $recent_activity; ?></p>
+        </div>
+    </section>
+
+    <!-- Manage Listings Section -->
+    <section id="manage-listings" class="manage-listings">
+        <h2>Manage Your Listings</h2>
+        <button onclick="window.location.href='add_listing.php'">Add New Listing</button>
+        <div class="listings">
+            <!-- Example of listing dynamically populated -->
+            <?php foreach ($listings as $listing): ?>
+                <div class="listing" id="listing-<?php echo $listing['id']; ?>">
+                    <h3><?php echo $listing['name']; ?></h3>
+                    <p>Starting Bid: $<?php echo $listing['starting_bid']; ?></p>
+                    <p>Current Bid: $<?php echo $listing['current_bid']; ?></p>
+                    <button onclick="window.location.href='edit_listing.php?id=<?php echo $listing['id']; ?>'">Edit Listing</button>
+                    <button onclick="removeListing(<?php echo $listing['id']; ?>)">Remove Listing</button>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+    <!-- Bidding and Sales Tracking Section -->
+    <section id="bidding-sales" class="bidding-sales">
+        <h2>Bidding & Sales Tracking</h2>
+        <div class="bidding-info">
+            <h3>Ongoing Bids</h3>
+            <p>Item: Vintage Watch - Current Bid: $150</p>
+            <p>Status: Active</p>
+        </div>
+        <div class="sales-info">
+            <h3>Sales Report</h3>
+            <p>Item: Classic Guitar - Sold for $300</p>
+            <p>Status: Completed</p>
+        </div>
+    </section>
+
+    <!-- Payment and Shipping Section -->
+    <section id="payments-shipping" class="payments-shipping">
+        <h2>Payments & Shipping</h2>
+        <div class="payments">
+            <h3>Pending Payments</h3>
+            <p>No pending payments.</p>
+        </div>
+        <div class="shipping">
+            <h3>Pending Shipments</h3>
+            <p>Item: Vintage Watch - Ship to: Buyer Name</p>
+        </div>
+    </section>
+
+    <!-- Communication Center Section -->
+    <section id="messages" class="messages">
+        <h2>Messages</h2>
+        <div class="message-box">
+            <h3>Message from Buyer</h3>
+            <p>Hi, I have a question about the Vintage Watch...</p>
+            <button onclick="window.location.href='respond_message.php'">Respond</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Online Auction System. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

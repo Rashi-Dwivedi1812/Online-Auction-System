@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Bid</title>
+    <link rel="stylesheet" href="place_bid.css">
+    <script src="place_bid.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Place Your Bid</h1>
+
+        <!-- Bid Form -->
+        <form id="bidForm" class="bid-form" onsubmit="placeBid(event)">
+            <label for="itemName">Item Name</label>
+            <!-- Display the item name dynamically -->
+            <input type="text" id="itemName" name="itemName" readonly>
+
+            <label for="bidAmount">Enter Your Bid Amount</label>
+            <input type="number" id="bidAmount" name="bidAmount" min="1" required placeholder="Enter amount in dollars">
+            <button type="submit">Place Bid</button>
+        </form>
+
+        <!-- Confirmation Message -->
+        <div id="confirmationMessage" class="confirmation" style="display: none;">
+            Your bid of $<span id="bidDisplay"></span> has been successfully placed!
+        </div>
+
+        <footer>
+            <button onclick="window.history.back()">Back to Dashboard</button>
+        </footer>
+    </div>
+</body>
+</html>

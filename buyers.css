@@ -1,0 +1,320 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #d83c65, #972378); /* Gradient Background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Set a max-width to limit the container's expansion */
+    padding: 20px;
+    margin: 0 auto; /* Centers the container */
+}
+
+/* Header Styling */
+header {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8saheqAM8XH52medZPE5-nQd5AKA2pKlVlEtaZIrVTaIMTHjFaKiqccK9wp8i6vS27_k&usqp=CAU"); /* Background Image */
+    text-align: center;
+    padding: 40px 0;
+    color: rgb(239, 235, 235);
+    box-shadow: 0 10px 20px rgba(23, 23, 23, 0.1);
+    margin-bottom: 40px; /* Margin for gap between header and content */
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: rgb(202, 196, 196);
+    margin: 0;
+    padding: 10px;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Section Layout */
+.section-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Individual Section Styling */
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 48%; /* Set a base width of 48% to allow moderate spacing between sections */
+    margin-bottom: 30px;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Ongoing Auctions Section */
+.auction-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two items side by side */
+    gap: 30px;
+}
+
+.auction-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.auction-item h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.auction-item p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.auction-item button {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.auction-item button:hover {
+    background: linear-gradient(135deg, #45a049, #6FBF73);
+}
+
+/* My Recent Bids Section */
+.active-bids {
+    margin-top: 30px;
+}
+
+.active-bids .bid-list {
+    display: block; /* Make items stack vertically */
+}
+
+.bid-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Space between each bid item */
+}
+
+.bid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bid-item h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.bid-item p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Watchlist Items */
+.watchlist-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two items side by side */
+    gap: 30px;
+}
+
+.watchlist-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.watchlist-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.watchlist-item h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.watchlist-item p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.watchlist-item button {
+    background-color: #FF6347;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.watchlist-item button:hover {
+    background-color: #e55347;
+}
+
+/* Account Settings */
+.account-settings {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.account-settings button {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.account-settings button:hover {
+    background: linear-gradient(135deg, #45a049, #6FBF73);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.modal-content .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.modal-content button {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background: linear-gradient(135deg, #45a049, #6FBF73);
+}
+
+/* Welcome Section */
+.welcome {
+    text-align: center;
+}
+
+.welcome h1 {
+    font-size: 3em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 1.5em;
+    color: white;
+}

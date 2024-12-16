@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Online Auction System</title>
+    <link rel="stylesheet" href="seller.css">
+    <script src="seller.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>Welcome to Your Seller's Dashboard</h1>
+            <p>Welcome, <span id="username"></span>!</p>
+        </header>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <!-- My Auctions Overview -->
+            <section class="my-auctions">
+                <h2>My Auctions</h2>
+                <div class="auction-list">
+                    <!-- Active Auctions -->
+                    <div class="auction-item">
+                        <h3>Vintage Watch</h3>
+                        <p>Current Bid: $100</p>
+                        <p>Status: Active</p>
+                        <p>Time Left: 1h 25m</p>
+                        <button onclick="viewAuction(1)">View Auction</button>
+                    </div>
+                    <div class="auction-item">
+                        <h3>Fine Art Painting</h3>
+                        <p>Current Bid: $350</p>
+                        <p>Status: Active</p>
+                        <p>Time Left: 2h 5m</p>
+                        <button onclick="viewAuction(2)">View Auction</button>
+                    </div>
+                    <!-- Upcoming Auctions -->
+                    <div class="auction-item upcoming">
+                        <h3>Classic Guitar</h3>
+                        <p>Starting Bid: $250</p>
+                        <p>Status: Upcoming</p>
+                        <button onclick="editAuction(3)">Edit Auction</button>
+                    </div>
+                    <!-- Completed Auctions -->
+                    <div class="auction-item completed">
+                        <h3>Luxury Watch</h3>
+                        <p>Final Price: $500</p>
+                        <p>Status: Completed</p>
+                        <button onclick="viewTransaction(4)">View Transaction</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bid Tracking -->
+            <section class="bid-tracking">
+                <h2>Current Bids</h2>
+                <div class="bid-list">
+                    <div class="bid-item">
+                        <h3>Vintage Watch</h3>
+                        <p>Highest Bid: $100</p>
+                        <button onclick="viewBids(1)">View Bids</button>
+                    </div>
+                    <div class="bid-item">
+                        <h3>Fine Art Painting</h3>
+                        <p>Highest Bid: $350</p>
+                        <button onclick="viewBids(2)">View Bids</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transaction Management -->
+            <section class="transactions">
+                <h2>My Transactions</h2>
+                <div class="transaction-list">
+                    <div class="transaction-item">
+                        <h3>Vintage Watch Sale</h3>
+                        <p>Buyer: JohnDoe</p>
+                        <p>Final Price: $100</p>
+                        <p>Status: Paid</p>
+                        <button onclick="viewTransactionDetails(1)">View Details</button>
+                    </div>
+                    <div class="transaction-item">
+                        <h3>Luxury Watch Sale</h3>
+                        <p>Buyer: JaneSmith</p>
+                        <p>Final Price: $500</p>
+                        <p>Status: Paid</p>
+                        <button onclick="viewTransactionDetails(2)">View Details</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inventory Management -->
+            <section class="inventory">
+                <h2>Manage My Inventory</h2>
+                <div class="inventory-list">
+                    <div class="inventory-item">
+                        <h3>Vintage Watch</h3>
+                        <p>Status: Auctioned</p>
+                        <button onclick="editInventoryItem(1)">Edit</button>
+                    </div>
+                    <div class="inventory-item">
+                        <h3>Fine Art Painting</h3>
+                        <p>Status: Auctioned</p>
+                        <button onclick="editInventoryItem(2)">Edit</button>
+                    </div>
+                    <div class="inventory-item">
+                        <h3>Classic Guitar</h3>
+                        <p>Status: Pending Auction</p>
+                        <button onclick="addToAuction(3)">Add to Auction</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seller Analytics -->
+            <section class="analytics">
+                <h2>Seller Performance</h2>
+                <div class="analytics-summary">
+                    <p>Total Sales: $1000</p>
+                    <p>Successful Auctions: 5</p>
+                    <p>Pending Transactions: 2</p>
+                    <p>Average Sale Price: $200</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>© 2024 Online Auction System. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

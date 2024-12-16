@@ -1,0 +1,181 @@
+/* Global Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font */
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7fc; /* Soft background for a clean look */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.container:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* For a more structured look */
+    letter-spacing: 1px; /* Adds spacing for emphasis */
+}
+
+/* Bid Form Styling */
+.bid-form {
+    margin-bottom: 30px;
+}
+
+/* Label Styling */
+.bid-form label {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #333;
+    display: block;
+}
+
+/* Item Name Field Styling */
+.bid-form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded corners for inputs */
+    background-color: #e9ecef; /* Light gray background for read-only */
+    cursor: not-allowed; /* Show that the field is not editable */
+    color: #333;
+}
+
+/* Item Name Focus Styling (Just for visual clarity) */
+.bid-form input[type="text"]:focus {
+    border-color: #6a11cb; /* Purple border on focus */
+    background-color: #fff; /* White background on focus for clarity */
+    outline: none; /* Removes default outline */
+}
+
+/* Input Fields Styling */
+.bid-form input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded corners for inputs */
+    background-color: #f9f9f9; /* Light background for clarity */
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Smooth focus transition */
+}
+
+/* Input Fields Focused */
+.bid-form input[type="number"]:focus {
+    border-color: #6a11cb; /* Purple border on focus */
+    background-color: #fff; /* White background on focus for clarity */
+    outline: none; /* Removes default outline */
+}
+
+/* Place Bid Button Styling */
+.bid-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #6a11cb; /* Consistent purple button */
+    color: white;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 10px; /* Rounded corners for buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.bid-form button:hover {
+    background-color: #2575fc; /* Light blue on hover */
+    transform: translateY(-3px); /* Subtle lift effect on hover */
+}
+
+/* Confirmation Message Styling */
+.confirmation {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e7f7e7; /* Light green background */
+    border: 1px solid #4CAF50;
+    border-radius: 10px; /* Rounded corners */
+    color: #4CAF50;
+    text-align: center;
+    font-size: 1.3em;
+    display: none; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.confirmation p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Footer Section */
+footer {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f1f1f1;
+    border-radius: 10px; /* Rounded corners for the footer */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+footer button {
+    background-color: #6c757d; /* Gray button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer button:hover {
+    background-color: #495057; /* Darker gray on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+footer button:focus {
+    outline: none; /* Remove focus outline for a cleaner look */
+}
+
+/* Modal Styles (if applicable) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}

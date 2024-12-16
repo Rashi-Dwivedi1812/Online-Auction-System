@@ -1,0 +1,184 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: #f4f4f4; */
+    
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #d83c65, #972378);
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Role Selection Dropdown */
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    border-color: #4CAF50;
+    background-color: #f1fdf1;
+    outline: none;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+/* Header Styling */
+header {
+   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8saheqAM8XH52medZPE5-nQd5AKA2pKlVlEtaZIrVTaIMTHjFaKiqccK9wp8i6vS27_k&usqp=CAU");
+   
+    /* background-size: cover; */
+    text-align:center;
+    padding: 40px 0;
+    color: rgb(239, 235, 235);
+    /* box-shadow: 0 10px 20px rgba(23, 23, 23, 0.1); */
+     margin-bottom: 40px; /*Added margin-bottom to create a gap between header and new-container */
+
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: rgb(202, 196, 196);
+    margin: 0;
+    padding: 10px;
+}
+
+/* New Container Styling for Form */
+.new-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 2px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* Form Heading */
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Form Input Styling */
+label {
+    display: block;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    background-color: #f1fdf1;
+    outline: none;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #45a049, #78d1ea);
+}
+
+/* Footer Styles (if needed) */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/* Modal Styling (if applicable) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 60%;
+    max-width: 500px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styling for auction, bid, and inventory images */
+.auction-image, .bid-image, .inventory-image {
+    width: 100%; /* Make images responsive */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Space below the images */
+}
+
+.auction-item img,
+.bid-item img,
+.inventory-item img {
+    max-width: 250px; /* Limit the width for uniformity */
+    margin-bottom: 10px; /* Adds space below the image */
+}
+
+p{
+    font-size: 1.3em;
+}

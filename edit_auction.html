@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Details - Online Auction System</title>
+    <link rel="stylesheet" href="edit_auction.css">
+    <script src="seller.js" defer></script>
+</head>
+<body>
+   <!-- Edit Auction Modal -->
+<div id="editAuctionModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEditAuctionModal()">&times;</span>
+        <h2>EDIT AUCTION</h2>
+        <form id="editAuctionForm">
+        <div class="subj"> <label for="auctionTitle">Auction Title:</label>
+            <input type="text" id="auctionTitle" name="auctionTitle" required><br><br>
+        </div>
+
+        <div class="subj"><label for="auctionDescription">Description:</label>
+            <textarea id="auctionDescription" name="auctionDescription" rows="4" required></textarea><br><br>
+        </div>
+
+        <div class="subj"><label for="startingBid">Starting Bid ($):</label>
+            <input type="number" id="startingBid" name="startingBid" min="1" required><br><br>
+        </div>
+
+        <div class="subj"> <label for="auctionDate">Auction End Date:</label>
+            <input type="datetime-local" id="auctionDate" name="auctionDate" required><br><br>
+        </div>
+        
+         <button type="submit" onclick="window.history.back()">Save Changes</button>
+       
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

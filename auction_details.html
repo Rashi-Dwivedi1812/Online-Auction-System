@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Details - Online Auction System</title>
+    <link rel="stylesheet" href="auction_details.css">
+    <script src="auction_details.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Auction Details</h1>
+        </header>
+
+        <div class="auction-details">
+            <h2 id="itemName"></h2>
+            <p id="itemDescription"></p>
+            <p>Start Price: $<span id="startPrice"></span></p>
+            <p>Current Bid: $<span id="currentBid"></span></p>
+            <p id="timer-1">Time Left: </p>
+        </div>
+
+        <footer>
+            <button onclick="window.history.back()">Back to Dashboard</button>
+        </footer>
+    </div>
+</body>
+</html>

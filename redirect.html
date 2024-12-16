@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Role</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>.</h1>
+        </header>
+        <div class="new-container">
+        <!-- change name of vo=== -->
+            <h2>Select Your Role</h2>
+            <p>Please select whether you want to proceed as a Buyer or Seller.</p>
+
+            <!-- Form to submit the selected role -->
+            <form id="roleForm">
+                <div class="role-option">
+                    <button type="button" onclick="redirectToRole('Buyer')" class="role-button">Buyer</button>
+                </div>
+                <div class="role-option">
+                    <button type="button" onclick="redirectToRole('Seller')" class="role-button">Seller</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function that handles redirection based on selected role
+        function redirectToRole(role) {
+            if (role === 'Buyer') {
+                // Redirect to buyer.html
+                window.location.href = 'buyers.html';
+            } else if (role === 'Seller') {
+                // Redirect to seller.html
+                window.location.href = 'seller.html';
+            }
+        }
+    </script>
+</body>
+</html>

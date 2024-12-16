@@ -1,0 +1,71 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.7em;
+    text-align: center;
+    margin-left: 330px;
+    margin-right: 330px;
+}
+
+/* Main Content */
+.transaction-details {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-summary, .payment-summary, .delivery-summary {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2, h3 {
+    color: #48b4f2;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* Back Button */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #5493e4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   margin-left: 320px;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #2edac8;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    justify-content: center;
+    padding: 0.7em;
+    background: #4CAF50;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 52%;
+    margin-left: 350px;
+}

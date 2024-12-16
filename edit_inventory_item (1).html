@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Inventory Item</title>
+    <link rel="stylesheet" href="viewbids.css">
+</head>
+<body>
+    <header>
+        <h1>Edit Inventory Item</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Item ID: <span id="item-id"></span></h2>
+            <form id="edit-item-form">
+                <label for="item-name">Item Name:</label>
+                <input type="text" id="item-name" name="item-name" value="Vintage Watch">
+
+                <label for="item-status">Status:</label>
+                <select id="item-status" name="item-status">
+                    <option value="pending">Pending Auction</option>
+                    <option value="auctioned" selected>Auctioned</option>
+                </select>
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        // Fetch Item ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemID = urlParams.get('itemID');
+        document.getElementById('item-id').textContent = itemID;
+
+        document.getElementById('edit-item-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Changes saved for item ID ' + itemID);
+            // Add backend integration here
+        });
+    </script>
+    <script src="view.js" defer></script>
+
+</body>
+</html>
